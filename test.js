@@ -36,4 +36,36 @@ test('OSS - Login', async t => {
 
         // Informasi Detail > Uraian
         .typeText('#input-complaint-description', 'ini adalah isi dari deskripsi nya ya..')
+
+        // Informasi Detail > Kronologi
+        .typeText('#input-complaint-chronology', 'ya kronologi nya seperti itu..')
+
+        // Informasi Detail > Penanam Modal
+        .click('#select2-select-source-of-funds-container')
+        .typeText('.select2-search.select2-search--dropdown', 'PMDN')
+        .click('.select2-results__option.select2-results__option--highlighted')
+
+        // Informasi Detail > Lokasi Usaha
+        .click('#select2-select-location-container')
+        .typeText('.select2-search.select2-search--dropdown', 'Cianjur')
+        .click('.select2-results__option.select2-results__option--highlighted')
+
+        // Informasi Detail > Nama Perusahaan
+        .typeText('#input-company-name', 'PT TestCafe')
+
+        // Informasi Detail > Jenis Usaha
+        .click('#select2-select-business-type-container')
+        .typeText('.select2-search.select2-search--dropdown', 'Hukum')
+        .click('.select2-results__option.select2-results__option--highlighted')
+
+        // Informasi Detail > Sumber Informasi
+        .click('#select2-select-information-source-container')
+        .typeText('.select2-search.select2-search--dropdown', 'Call')
+        .click('.select2-results__option.select2-results__option--highlighted')
+
+        // Tujuan Pengaduan > Draf
+        // .click('#is-draft')
+
+        // Kirim
+        .click('#form-submit')
 });
