@@ -5,7 +5,7 @@ fixture `Hello, OSS.`
 
 test('OSS - Login', async t => {
     await t
-    	.maximizeWindow()
+    	// .maximizeWindow()
 
     	// Login
         .typeText('#email2', 'helpdesk3@mailinator.com')
