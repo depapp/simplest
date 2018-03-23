@@ -4,13 +4,17 @@ fixture `Hello, OSS.`
     .page `http://ossdev.cartenz.co.id/auth/login`;
 
 test('OSS - Login', async t => {
+
     await t
-    	// .maximizeWindow()
+    	.maximizeWindow()
 
     	// Login
         .typeText('#email2', 'helpdesk3@mailinator.com')
         .typeText('#test1', '111111')
         .click('.btn.btn-block.btn-success.uppercase.rnd')
+        
+        // Expect : Nama Logged in User        
+        .expect(Selector('.username.username-hide-on-mobile').innerText).eql('Helpdesk 3')
 
         // Sidemenu > Data Pengaduan
         .click('.nav-item.start.complaint-nav')
@@ -23,6 +27,10 @@ test('OSS - Login', async t => {
         
         // Identitas > Email
         .typeText('#input-identity-email', ' ')
+
+        // Expect : Nama Pelapor
+        // eql='' karena field ybs 'readonly', ketika memasukan value nya, gk ketemu
+        .expect(Selector('#input-identity-name').innerText).eql('')
         
         // Informasi Detail > Kategori
         .click('#select2-select-category-container')
@@ -39,6 +47,15 @@ test('OSS - Login', async t => {
 
         // Informasi Detail > Kronologi
         .typeText('#input-complaint-chronology', 'ya kronologi nya seperti itu..')
+
+        // Informasi Detail > Upload
+        .click('#btn-unggah')
+        .setFilesToUpload('#attachmentFiles', [
+                    'a.jpeg',
+                    'b.jpg',
+                    'c.jpg'
+                ])
+        .click('.btn.dark.btn-actions.pull-right')
 
         // Informasi Detail > Penanam Modal
         .click('#select2-select-source-of-funds-container')
