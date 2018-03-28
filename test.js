@@ -81,7 +81,16 @@ test('OSS - Login', async t => {
         .click('.select2-results__option.select2-results__option--highlighted')
 
         // Tujuan Pengaduan > Draf
-        // .click('#is-draft')
+        .click('.TriSea-technologies-Switch.pull-right')
+        // .typeText('#input-comment', 'ini adalah komentar')
+
+        .click('#select2-select-leading-sector-container')
+        .typeText('.select2-search.select2-search--dropdown', 'Cianjur')
+        .click('.select2-results__option.select2-results__option--highlighted')
+        
+        // Rincian Pengaduan
+        // IDK it's works or not
+        // .typeText('#form-complaint-detail', 'ini adalah isi dari Rincian Pengaduan..')
 
         // Kirim
         .click('#form-submit')
