@@ -1,5 +1,7 @@
 * **Travis-CI** status:
-[![Build Status](https://travis-ci.org/depapp/simplest.svg?branch=master)](https://travis-ci.org/depapp/simplest)
+
+
+* [![Build Status](https://travis-ci.org/depapp/simplest.svg?branch=master)](https://travis-ci.org/depapp/simplest)
 
 
 
