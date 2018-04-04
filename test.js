@@ -1,4 +1,5 @@
 import { Selector } from 'testcafe';
+import XPathSelector from './xpath-selector';
 
 fixture `Hello, OSS.`
     .page `http://ossdev.cartenz.co.id/auth/login`;
@@ -11,7 +12,7 @@ test('OSS - Login', async t => {
     	// Login
         .typeText('#email2', 'helpdesk3@mailinator.com')
         .typeText('#test1', '111111')
-        .click('.btn.btn-block.btn-success.uppercase.rnd')
+        .click(XPathSelector('/html/body/div/div/div[2]/div/div[1]/form[1]/div[3]/div[5]/button'))
         
         // Expect : Nama Logged in User        
         .expect(Selector('.username.username-hide-on-mobile').innerText).eql('Helpdesk 3')
