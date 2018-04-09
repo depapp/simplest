@@ -9,7 +9,7 @@ test('OSS - Login', async t => {
     await t
     	.maximizeWindow()
 
-    	// Login
+    	// Login (Click button with XPath)
         .typeText('#email2', 'helpdesk3@mailinator.com')
         .typeText('#test1', '111111')
         .click(XPathSelector('/html/body/div/div/div[2]/div/div[1]/form[1]/div[3]/div[5]/button'))
@@ -82,12 +82,13 @@ test('OSS - Login', async t => {
         .click('.select2-results__option.select2-results__option--highlighted')
 
         // Tujuan Pengaduan > Draf
-        .click('.TriSea-technologies-Switch.pull-right')
+        // .click('.TriSea-technologies-Switch.pull-right')
         // .typeText('#input-comment', 'ini adalah komentar')
 
-        .click('#select2-select-leading-sector-container')
-        .typeText('.select2-search.select2-search--dropdown', 'Cianjur')
-        .click('.select2-results__option.select2-results__option--highlighted')
+        // Leading Sector
+        // .click('#select2-select-leading-sector-container')
+        // .typeText('.select2-search.select2-search--dropdown', 'Cianjur')
+        // .click('.select2-results__option.select2-results__option--highlighted')
         
         // Rincian Pengaduan
         // IDK it's works or not
@@ -95,4 +96,8 @@ test('OSS - Login', async t => {
 
         // Kirim
         .click('#form-submit')
+        
+        // Konfirmasi
+        // Kalau ini di comment, Complaint tidak terkirim
+        // .click('#btn-save')
 });
