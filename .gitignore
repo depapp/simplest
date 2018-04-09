@@ -60,4 +60,4 @@ typings/
 
 screenshots/*
 doc.js
-.xml
+*.xml
